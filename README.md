@@ -18,4 +18,5 @@
 
 ## Необходимые GitHub Secrets
 `DOCKER_USERNAME, DOCKER_PASSWORD` - логин и пароль (лучше токен) для доступа в Docker Hub
+
 `SERVER_HOST, SERVER_USER, SERVER_SSH_KEY` - доступ на сервер
