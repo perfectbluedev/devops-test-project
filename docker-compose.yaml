@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: php-app
+    environment:
+      - APP_ENV=production
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-app
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+      - php
