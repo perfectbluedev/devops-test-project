@@ -21,6 +21,7 @@ $host = gethostname();
             <strong>PHP version:</strong> <?= phpversion() ?>
         </div>
         <p>This application is served via Nginx + PHP-FPM inside Docker containers.</p>
+        <p>Deployed at: <?= date('Y-m-d H:i:s') ?></p>
         <hr>
         <a href="info.php">phpinfo()</a>
     </div>
