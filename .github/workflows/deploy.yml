@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           source: "deploy/*"
-          target: "/opt/devops-test-project/"
+          target: "/home/${{ secrets.SERVER_USER }}/devops-test-project/"
           strip_components: 1
 
       - name: Restart containers
@@ -44,7 +44,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            cd /opt/devops-test-project
+            cd /home/${{ secrets.SERVER_USER }}/devops-test-project
             docker-compose pull
             docker-compose up -d --force-recreate
             docker system prune -f
