@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   php:
-    image: ${{ secrets.DOCKER_USERNAME }}/devops-test-project:latest
+    image: dockerponome/devops-test-project:latest
     container_name: php-app
     environment:
       - APP_ENV=production
